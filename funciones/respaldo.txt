@@ -1,0 +1,36 @@
+const fs = require("fs");
+const tareas = JSON.parse(fs.readFileSync("../baseDeDatos/tareas.json", "utf-8"));//// convierte el formato JSON a formato de js para poder trabajar con el.
+
+module.exports = {
+    escribir: function(){
+        fs.writeFileSync("../baseDeDatos/tareas.json", JSON.stringify(tareas, null, 4));//escribe el nuevo formato js y lo convierte a json, para guardarlo en la base de datos.
+    },
+    listar: function(){
+    tareas.forEach(tareas => {//forEach recorre el array uno por uno.
+        console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        console.log(`(${tareas.id})Titulo: ${tareas.titulo} ---- Estado: ${tareas.estado}`);
+        console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+    })},
+    agregar: function(tareaNueva){
+        tareas.push(tareaNueva);
+        console.log("Tarea agregada con exito.");
+        this.listar()
+        this.escribir()
+    },
+    actId: function(){ //modifica las id empezando desde 1, y las siguienes ++.
+        for(x = 0; x < tareas.length; x++){
+            x === 0? tareas[x].id = 1 : tareas[x].id = x + 1;}
+    },
+    eliminar: function(id){
+        tareas.splice(id -1, 1)//splice elimina el objeto con el parametro de la id - 1, ya que en array empieza desde 0.
+        this.actId()
+        this.listar()
+        this.escribir()
+    },
+    actualizar: function(titulo, estado, id){
+        tareas[tareas.findIndex(obj => obj.id === id)].titulo = titulo;//findIndex busca un elemento en tareas.id igual a la id ingresada. Una vez hecho, modifica los valores de la tarea correspondiente.
+        tareas[tareas.findIndex(obj => obj.id === id)].estado = estado;
+        this.listar();
+        this.escribir();
+    }
+}

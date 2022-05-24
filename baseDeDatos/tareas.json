@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "titulo": "Hacer app de notas",
+        "estado": "en progreso",
+        "fecha": "23/5/2022"
+    },
+    {
+        "id": 2,
+        "titulo": "ser fachero como eric",
+        "estado": "pendiente",
+        "fecha": "23/5/2022"
+    },
+    {
+        "id": 3,
+        "titulo": "rosado",
+        "estado": "terminada",
+        "fecha": "23/5/2022 [21:53]"
+    }
+]
