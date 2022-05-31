@@ -10,6 +10,7 @@ module.exports = {
             x === 0? tareas[x].id = 1 : tareas[x].id = x + 1;}
     },
     fechaDeCreacion: function(){
-        return `${fecha.getDate()}/${fecha.getMonth() +1}/${fecha.getFullYear()} [${fecha.getHours()}:${fecha.getMinutes()}]`
+        return fecha.toLocaleString();//asigna la fecha y hora del momento.
+        //`${fecha.getDate()}/${fecha.getMonth() +1}/${fecha.getFullYear()} [${fecha.getHours()}:${fecha.getMinutes()}]`
     }
 }

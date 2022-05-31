@@ -11,13 +11,18 @@ const comandos = [
     {accion: "actualizar",
     sintaxis: "node app actualizar nuevoTitulo nuevoEstado numId",
     },
+    {accion: "filtrar",
+    sintaxis: "node app filtrar estadoBuscado",
+    },
 ]
 
-module.exports = function(){
+module.exports = {
+    mostrarComandos: function(){
     comandos.forEach(element => {
        console.log(`Accion: ${element.accion}`);
        console.log(`Sintaxis: ${element.sintaxis}`);
        console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
     });
     return "Estos son los comandos, disfrutelos!"
+    },
 }
