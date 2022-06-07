@@ -21,6 +21,7 @@ const eliminar= function(id){
     setTimeout(listar, 1000);
 };
 const actualizar= function(titulo, estado, id){
+    tareas.findIndex(obj => obj.id === id) === -1 && "Id no encontrada, ingrese una correcta por favor";//comprueba si la id es la correcta.
     tareas[tareas.findIndex(obj => obj.id === id)].titulo = titulo;//findIndex busca un elemento en tareas.id igual a la id ingresada. Una vez hecho, modifica los valores de la tarea correspondiente.
     tareas[tareas.findIndex(obj => obj.id === id)].estado = estado;
     tareas[tareas.findIndex(obj => obj.id === id)].fecha = fechaDeCreacion();

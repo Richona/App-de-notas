@@ -25,13 +25,13 @@ module.exports = function veriMadre(accion, titulo, estado, id) {
                 estado,
                 fecha: fechaDeCreacion(),
             };
-            agregar(tareaNueva);//setTimeout hace esperar para ejecutar la funcion, en este caso 1seg (1000 miliseg)
+            agregar(tareaNueva);
             break;
         case "eliminar":
-            eliminar(titulo);//listar setTimeout como callback, y listar como callback del callback.
+            eliminar(titulo);
             break;
         case "actualizar":
-            tareas.findIndex(obj => obj.id === id) === -1 ? console.log("Id no encontrada, ingrese una correcta por favor") : actualizar(titulo, estado, id);//comprueba si la id es la correcta.
+            actualizar(titulo, estado, id);
             break;
         case "filtrar":
             filtrar(titulo, tareas);
