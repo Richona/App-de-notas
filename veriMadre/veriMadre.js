@@ -1,5 +1,4 @@
 const {listar,agregar,eliminar,actualizar,filtrar} = require("../funciones/funcionesDeTareas");
-const {fechaDeCreacion} = require("../funciones/funcionesExternas")
 const {mostrarComandos} = require("./comandos")
 
 module.exports = function veriMadre(accion, titulo, estado, id) {
@@ -21,7 +20,6 @@ module.exports = function veriMadre(accion, titulo, estado, id) {
             let tareaNueva = {
                 titulo,
                 estado,
-                fecha: fechaDeCreacion(),
             };
             agregar(tareaNueva);
             break;
