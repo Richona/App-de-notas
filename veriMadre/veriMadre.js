@@ -21,7 +21,6 @@ module.exports = function veriMadre(accion, titulo, estado, id) {
             break;
         case "agregar":
             let tareaNueva = {
-                id: tareas[tareas.length - 1].id +1,
                 titulo,
                 estado,
                 fecha: fechaDeCreacion(),

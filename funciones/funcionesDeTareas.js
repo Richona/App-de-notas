@@ -9,7 +9,7 @@ const listar= function(){
         console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 })};
 const agregar= function(tareaNueva){
-    tareas.push(tareaNueva);
+    tareas.push({id :tareas[tareas.length - 1].id +1, ...tareaNueva});
     console.log("Tarea agregada con exito.");
     escribir(tareas);
     setTimeout(listar, 1000);
