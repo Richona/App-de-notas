@@ -1,5 +1,3 @@
-const {readFileSync} = require("fs");
-const tareas = JSON.parse(readFileSync("../baseDeDatos/tareas.json", "utf-8"));// convierte el formato JSON a formato de js para poder trabajar con el.
 const {listar,agregar,eliminar,actualizar,filtrar} = require("../funciones/funcionesDeTareas");
 const {fechaDeCreacion} = require("../funciones/funcionesExternas")
 const {mostrarComandos} = require("./comandos")
@@ -34,7 +32,7 @@ module.exports = function veriMadre(accion, titulo, estado, id) {
             actualizar(titulo, estado, id);
             break;
         case "filtrar":
-            filtrar(titulo, tareas);
+            filtrar(titulo);
             break;
         case "comandos":
             console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");

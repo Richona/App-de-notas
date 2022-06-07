@@ -28,8 +28,8 @@ const actualizar= function(titulo, estado, id){
     escribir(tareas);
     setTimeout(listar, 1000);
 };
-const filtrar= function(estado,array){
-    let filtrados = array.filter(array => array.estado === estado);//filter busca el estado en el array, los dos pasados como parametros, devuelve otro array con los datos buscados, sino array vacio, sin modificar el anterior.
+const filtrar= function(estado){
+    let filtrados = tareas.filter(array => array.estado === estado);//filter busca el estado en el array, los dos pasados como parametros, devuelve otro array con los datos buscados, sino array vacio, sin modificar el anterior.
     filtrados.forEach(tareas => {//forEach recorre el array uno por uno.
         console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         console.log(`(${tareas.id})Titulo: ${tareas.titulo} ---- Estado: ${tareas.estado} ---- Fecha: ${tareas.fecha}`);
